@@ -1,11 +1,11 @@
-type SensorRoomData @aws_iam @aws_cognito_user_pools {
+type SensorRoomData @model @aws_iam @aws_cognito_user_pools {
   sensorId: String!
   flowRate: Int
   roomId: Int
   occupied: Boolean
 }
 
-type Alert @aws_iam @aws_cognito_user_pools {
+type Alert @model @aws_iam @aws_cognito_user_pools {
   id: ID!
   sourceObject: String!
   type: AlertType!
@@ -101,13 +101,6 @@ input ModelSensorRoomDataFilterInput {
   not: ModelSensorRoomDataFilterInput
 }
 
-type Query {
-  getSensorRoomData(id: ID!): SensorRoomData
-  listSensorRoomDatas(filter: ModelSensorRoomDataFilterInput, limit: Int, nextToken: String): ModelSensorRoomDataConnection
-  getAlert(id: ID!): Alert
-  listAlerts(filter: ModelAlertFilterInput, limit: Int, nextToken: String): ModelAlertConnection
-}
-
 input CreateSensorRoomDataInput {
   sensorId: String!
   flowRate: Int
@@ -124,24 +117,6 @@ input UpdateSensorRoomDataInput {
 
 input DeleteSensorRoomDataInput {
   id: ID
-}
-
-type Mutation {
-  createSensorRoomData(input: CreateSensorRoomDataInput!): SensorRoomData @aws_iam @aws_cognito_user_pools 
-  updateSensorRoomData(input: UpdateSensorRoomDataInput!): SensorRoomData @aws_iam @aws_cognito_user_pools 
-  deleteSensorRoomData(input: DeleteSensorRoomDataInput!): SensorRoomData @aws_iam @aws_cognito_user_pools 
-  createAlert(input: CreateAlertInput!): Alert @aws_iam @aws_cognito_user_pools 
-  updateAlert(input: UpdateAlertInput!): Alert
-  deleteAlert(input: DeleteAlertInput!): Alert @aws_iam @aws_cognito_user_pools 
-}
-
-type Subscription {
-  onCreateSensorRoomData: SensorRoomData @aws_subscribe(mutations: ["createSensorRoomData"])
-  onUpdateSensorRoomData: SensorRoomData @aws_subscribe(mutations: ["updateSensorRoomData"])
-  onDeleteSensorRoomData: SensorRoomData @aws_subscribe(mutations: ["deleteSensorRoomData"])
-  onCreateAlert: Alert @aws_subscribe(mutations: ["createAlert"])
-  onUpdateAlert: Alert @aws_subscribe(mutations: ["updateAlert"])
-  onDeleteAlert: Alert @aws_subscribe(mutations: ["deleteAlert"])
 }
 
 type ModelAlertConnection {
