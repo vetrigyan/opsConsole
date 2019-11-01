@@ -1,7 +1,8 @@
 type SensorRoomData @model @aws_iam @aws_cognito_user_pools {
+  id: ID!
   sensorId: String!
   flowRate: Int
-  roomId: Int
+  roomId: Int!
   occupied: Boolean
 }
 
@@ -92,6 +93,7 @@ input ModelBooleanFilterInput {
 }
 
 input ModelSensorRoomDataFilterInput {
+  id: ModelIDFilterInput
   sensorId: ModelStringFilterInput
   flowRate: ModelIntFilterInput
   roomId: ModelIntFilterInput
@@ -102,13 +104,15 @@ input ModelSensorRoomDataFilterInput {
 }
 
 input CreateSensorRoomDataInput {
+  id: ID
   sensorId: String!
   flowRate: Int
-  roomId: Int
+  roomId: Int!
   occupied: Boolean
 }
 
 input UpdateSensorRoomDataInput {
+  id: ID!
   sensorId: String
   flowRate: Int
   roomId: Int
