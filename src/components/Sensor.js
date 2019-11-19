@@ -145,7 +145,7 @@ export default props => {
             <Divider />
             <SensorRoomDataDetails>
               <SensorRoomDataDetail>
-                {"Sensor Type: Water flow sensor"}
+                {"Sensor Type: Water flow"}
               </SensorRoomDataDetail>
               <SensorRoomDataDetail>
                 {"Current Flow Rate: " +  props.sensor.flowRate + " mL/min"}

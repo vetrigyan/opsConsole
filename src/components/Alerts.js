@@ -11,7 +11,7 @@ import {
 } from "../graphql/subscriptions";
 
 const Container = styled("div")`
-  max-width: 800px;
+  max-width: 1000px;
   margin: 16px auto;
 `;
 

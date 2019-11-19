@@ -93,13 +93,13 @@ export default () => {
       </Header>
       <StyledTabs onChange={index => setTabIndex(index)}>
         <StyledTabList>
-          <StyledTab>Alerts</StyledTab>
           <StyledTab>Sensor Status</StyledTab>
+          <StyledTab>Alerts</StyledTab>
         </StyledTabList>
         <StyledTabPanels>
-          <StyledTabPanel>{tabIndex === 0 && <Alerts />}</StyledTabPanel>
+          <StyledTabPanel>{tabIndex === 0 && <SensorStatus />}</StyledTabPanel>
           <StyledTabPanel>
-            {tabIndex === 1 && <SensorStatus />}
+            {tabIndex === 1 && <Alerts />}
           </StyledTabPanel>
         </StyledTabPanels>
       </StyledTabs>

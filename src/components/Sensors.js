@@ -6,7 +6,7 @@ import Listing from "./Sensor";
 import { listSensorRoomDatas } from "../graphql/queries";
 
 const Container = styled("div")`
-  max-width: 800px;
+  max-width: 1000px;
   margin: 16px auto;
 `;
 
