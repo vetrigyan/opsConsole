@@ -9,7 +9,8 @@ import {
   FaRegTrashAlt,
   FaRegAddressBook,
   FaRegEnvelope,
-  FaPhone
+  FaPhone,
+  FaMicrochip
 } from "react-icons/fa";
 
 
@@ -138,23 +139,23 @@ export default props => {
       <AlertInfo>
         <AlertMetaData>
           <div>
-            <JobTitle>{props.alert.title}</JobTitle>
+            <JobTitle>{"Alert Summary: " + props.alert.title}</JobTitle>
           </div>
         </AlertMetaData>
           <>
             <Divider />
             <AlertDetails>
               <AlertDetail>
-                <FaRegAddressBook style={{ marginBottom: "2px" }} />
-                {props.alert.sourceObject}
+                #<FaRegAddressBook style={{ marginBottom: "2px" }} />
+                {"SENSOR ID: " + props.alert.sourceObject}
               </AlertDetail>
               <AlertDetail>
-                <FaRegEnvelope style={{ marginBottom: "2px" }} />
-                {props.alert.type}
+                #<FaRegEnvelope style={{ marginBottom: "2px" }} />
+                {"FAILURE CONDITION: " + props.alert.type}
               </AlertDetail>
               <AlertDetail>
-                <FaPhone style={{ marginBottom: "2px" }} />
-                {props.alert.severity}
+                #<FaPhone style={{ marginBottom: "2px" }} />
+                {"SEVERITY: " + props.alert.severity}
               </AlertDetail>
             </AlertDetails>
           </>
