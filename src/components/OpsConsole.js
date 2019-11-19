@@ -82,7 +82,7 @@ export default () => {
   return (
     <>
       <Header>
-        <Title>IoT OpsConsole</Title>
+        <Title>OcTank                Hotel Operator Console</Title>
         <SignOutButton
           onClick={() => {
             Auth.signOut().then(() => window.location.reload());
