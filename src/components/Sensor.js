@@ -138,23 +138,23 @@ export default props => {
       <SensorRoomDataInfo>
         <SensorRoomDataMetaData>
           <div>
-            <JobTitle>{props.sensor.sensorId}</JobTitle>
+            <JobTitle>{"Sensor ID: " + props.sensor.sensorId}</JobTitle>
           </div>
         </SensorRoomDataMetaData>
           <>
             <Divider />
             <SensorRoomDataDetails>
               <SensorRoomDataDetail>
-                <FaRegAddressBook style={{ marginBottom: "2px" }} />
-                {props.sensor.flowRate}
+                {"Sensor Type: Water flow sensor"}
               </SensorRoomDataDetail>
               <SensorRoomDataDetail>
-                <FaRegEnvelope style={{ marginBottom: "2px" }} />
-                {props.sensor.roomId}
+                {"Current Flow Rate: " +  props.sensor.flowRate + " mL/min"}
               </SensorRoomDataDetail>
               <SensorRoomDataDetail>
-                <FaPhone style={{ marginBottom: "2px" }} />
-                {props.sensor.occupied}
+                {"Room Number: " + props.sensor.roomId}
+              </SensorRoomDataDetail>
+              <SensorRoomDataDetail>
+                {"Room Occupancy Status: " + props.sensor.occupied ? 'Occupied' : 'Vacant'}
               </SensorRoomDataDetail>
             </SensorRoomDataDetails>
           </>

@@ -146,16 +146,13 @@ export default props => {
             <Divider />
             <AlertDetails>
               <AlertDetail>
-                #<FaRegAddressBook style={{ marginBottom: "2px" }} />
-                {"SENSOR ID: " + props.alert.sourceObject}
+                {"Sensor ID: " + props.alert.sourceObject}
               </AlertDetail>
               <AlertDetail>
-                #<FaRegEnvelope style={{ marginBottom: "2px" }} />
-                {"FAILURE CONDITION: " + props.alert.type}
+                {"Failure Condition: " + props.alert.type}
               </AlertDetail>
               <AlertDetail>
-                #<FaPhone style={{ marginBottom: "2px" }} />
-                {"SEVERITY: " + props.alert.severity}
+                {"Severity: " + props.alert.severity}
               </AlertDetail>
             </AlertDetails>
           </>
