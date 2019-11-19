@@ -32,23 +32,7 @@ export default () => {
       .catch(error => {
         console.log(error);
       });
-/*
-  API.graphql(graphqlOperation(onUpdateSensorRoomDatas)).subscribe({
-      next: (e) => {
-          setListings(prevValue => {
-          console.log("Invoked onUpdateSensorRoomDatas Subscription callback " + e.value.data.onUpdateSensorRoomDatas.title);  
-                const updatedListings = prevValue.map(l => {
-                  if (l.id === e.value.data.onUpdateSensorRoomDatas.id) {
-                    return e.value.data.onUpdateSensorRoomDatas;
-                  }
-
-                  return l;
-                });
-                return updatedListings;
-          });
       }
-    });
-*/
   return (
     <Container>
       <Listings>
