@@ -154,7 +154,7 @@ export default props => {
                 {"Room Number: " + props.sensor.roomId}
               </SensorRoomDataDetail>
               <SensorRoomDataDetail>
-                {"Room Occupancy Status: " + props.sensor.occupied ? 'Occupied' : 'Vacant'}
+                {props.sensor.occupied ? ("Room Occupancy Status: Occupied") : ("Room Occupancy Status: Vacant")}
               </SensorRoomDataDetail>
             </SensorRoomDataDetails>
           </>
