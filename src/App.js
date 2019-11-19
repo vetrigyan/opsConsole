@@ -64,7 +64,7 @@ function App() {
     <Alerts />
   ) : (
     <>
-      <Title>Journey</Title>
+      <Title>OcTank Hotel Operator Console </Title>
       <Authenticator
         onStateChange={authState => {
           if (authState === "signedIn") {

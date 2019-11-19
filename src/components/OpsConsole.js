@@ -5,7 +5,7 @@ import { Button } from "@rebass/emotion";
 import { Tabs, TabList, Tab, TabPanels, TabPanel } from "@reach/tabs";
 
 import Alerts from "./Alerts";
-import SensorStatus from "./Alerts";
+import SensorStatus from "./Sensors";
 
 const Header = styled("div")`
   background-color: #31465f;
