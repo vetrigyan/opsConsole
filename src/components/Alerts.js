@@ -41,24 +41,23 @@ export default () => {
       next: (e) => {
           setListings(prevValue => {
           console.log("Invoked onCreateAlert Subcription callback " + e.value.data.onCreateAlert.title);  
-          let ids = new Map();
+          let isAdded = false;
           let updatedListings = prevValue;
-          updatedListings.push(e.value.data.onCreateAlert);
+          let newAlert = e.value.data.onCreateAlert;
                   updatedListings = updatedListings.filter(l => {
-                  if (ids.has(l.id)) {
+                  if (newAlert.id == l.id) {
                     console.log("Duplicate listing found, handling it with id= " + l.id + ", title=" + l.title);
-                    const dupListing = ids.get(l.id);
-                    if (dupListing.updatedAt >= l.updatedAt) {
+                    if (newAlert.updatedAt >= l.updatedAt) {
                       return false;
+                    } else {
+                      isAdded = true;
+                      return true;
                     }
-                    ids.delete(l.id);
-                    ids.set(l.id, l);
-                    return true;
-                  } else {
-                    ids.set(l.id, l);
-                    return true;
                   }
                 });
+          if (! isAdded) 
+            updatedListings.push(newAlert);
+
           updatedListings.sort((a, b) => {
             if (a.updatedAt > b.updatedAt) return -1;
             else return 1;
