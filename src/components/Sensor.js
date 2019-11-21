@@ -101,9 +101,32 @@ const SensorRoomDataDetails = styled("div")`
   align-items: center;
   padding: 16px;
 `;
+const SensorRoomDataDetailWrapper = styled("div")`
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 2px;
+`;
 
-const SensorRoomDataDetail = styled("span")`
+const SensorRoomDataDetailFieldName = styled("span")`
+  color: #24bee4;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+`;
+const SensorRoomDataDetailFieldValue = styled("span")`
   color: #ffac31;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+`;
+
+const SensorRoomDataDetailFieldValueHighlight = styled("span")`
+  color: #b51609;
   margin: 0;
   display: flex;
   flex-direction: column;
@@ -144,18 +167,46 @@ export default props => {
           <>
             <Divider />
             <SensorRoomDataDetails>
-              <SensorRoomDataDetail>
-                {"Sensor Type: Water flow"}
-              </SensorRoomDataDetail>
-              <SensorRoomDataDetail>
-                {"Current Flow Rate: " +  props.sensor.flowRate + " mL/min"}
-              </SensorRoomDataDetail>
-              <SensorRoomDataDetail>
-                {"Room Number: " + props.sensor.roomId}
-              </SensorRoomDataDetail>
-              <SensorRoomDataDetail>
-                {props.sensor.occupied ? ("Room Occupancy Status: Occupied") : ("Room Occupancy Status: Vacant")}
-              </SensorRoomDataDetail>
+              <SensorRoomDataDetailWrapper>
+                <SensorRoomDataDetailFieldName>
+                  {"Sensor Type: "}
+                </SensorRoomDataDetailFieldName>
+                <SensorRoomDataDetailFieldValue>
+                  {"Water flow"}
+                </SensorRoomDataDetailFieldValue>
+              </SensorRoomDataDetailWrapper>
+              <SensorRoomDataDetailWrapper>
+                <SensorRoomDataDetailFieldName>
+                  {"Current Flow Rate: "}
+                </SensorRoomDataDetailFieldName>
+                {props.sensor.flowRate != 100 ? 
+                  (
+                    <SensorRoomDataDetailFieldValue>
+                      {props.sensor.flowRate + " mL/min"}
+                    </SensorRoomDataDetailFieldValue>
+                  ) : 
+                  (
+                    <SensorRoomDataDetailFieldValueHighlight>
+                      {props.sensor.flowRate + " mL/min"}
+                    </SensorRoomDataDetailFieldValueHighlight>
+                  )}
+              </SensorRoomDataDetailWrapper>
+              <SensorRoomDataDetailWrapper>
+                <SensorRoomDataDetailFieldName>
+                  {"Room Number: "}
+                </SensorRoomDataDetailFieldName>
+                <SensorRoomDataDetailFieldValue>
+                  {props.sensor.roomId}
+                </SensorRoomDataDetailFieldValue>
+              </SensorRoomDataDetailWrapper>
+              <SensorRoomDataDetailWrapper>
+                <SensorRoomDataDetailFieldName>
+                  {"Room Occupancy Status: "}
+                </SensorRoomDataDetailFieldName>
+                <SensorRoomDataDetailFieldValue>
+                  {props.sensor.occupied ? ("Occupied") : ("Vacant")}
+                </SensorRoomDataDetailFieldValue>
+              </SensorRoomDataDetailWrapper>
             </SensorRoomDataDetails>
           </>
       </SensorRoomDataInfo>
