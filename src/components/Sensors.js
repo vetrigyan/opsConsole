@@ -4,6 +4,7 @@ import styled from "@emotion/styled";
 
 import Listing from "./Sensor";
 import { listSensorRoomDatas } from "../graphql/queries";
+import { onUpdateSensorRoomData } from "../graphql/subscriptions";
 
 const Container = styled("div")`
   max-width: 1000px;
@@ -32,6 +33,20 @@ export default () => {
       .catch(error => {
         console.log(error);
       });
+  API.graphql(graphqlOperation(onUpdateSensorRoomData)).subscribe({
+      next: (e) => {
+          setListings(prevValue => {
+          console.log("Invoked onUpdateSensorRoomData Subscription callback " + e.value.data.onUpdateSensorRoomData.id);  
+                const updatedListings = prevValue.map(l => {
+                  if (l.id === e.value.data.onUpdateSensorRoomData.id) {
+                    return e.value.data.onUpdateSensorRoomData;
+                  } else 
+                    return l;
+                });
+                return updatedListings;
+          });
+      }
+    });
   }, []);
   return (
     <Container>
