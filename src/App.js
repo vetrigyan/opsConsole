@@ -2,9 +2,13 @@ import React, { useEffect, useState } from "react";
 import { Auth } from "aws-amplify";
 import { Authenticator } from "aws-amplify-react";
 import styled from "@emotion/styled";
-import { ReactComponent as Logo } from './octank-logo.png';
 import awsExports from "./aws-exports";
 import Alerts from "./components/OpsConsole";
+
+const Image = styled.img`
+  height: 100px;
+  width: 100px
+`;
 
 const Title = styled("h1")`
   text-align: center;
@@ -63,7 +67,7 @@ function App() {
     <Alerts />
   ) : (
     <>
-      <Logo />
+      <Image src="./octank-logo.png" />
       <Title>Hotel Operator Console </Title>
       <Authenticator
         onStateChange={authState => {
