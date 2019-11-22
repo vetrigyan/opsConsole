@@ -2,13 +2,12 @@ import React, { useEffect, useState } from "react";
 import { Auth } from "aws-amplify";
 import { Authenticator } from "aws-amplify-react";
 import styled from "@emotion/styled";
-
+import { ReactComponent as Logo } from './octank-logo.png';
 import awsExports from "./aws-exports";
 import Alerts from "./components/OpsConsole";
 
 const Title = styled("h1")`
   text-align: center;
-  text-transform: uppercase;
   color: #ffffff;
   margin-bottom: 8px;
 `;
@@ -64,7 +63,8 @@ function App() {
     <Alerts />
   ) : (
     <>
-      <Title>OcTank Hotel Operator Console </Title>
+      <Logo />
+      <Title>Hotel Operator Console </Title>
       <Authenticator
         onStateChange={authState => {
           if (authState === "signedIn") {
