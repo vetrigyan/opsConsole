@@ -6,6 +6,19 @@ import awsExports from "./aws-exports";
 import Alerts from "./components/OpsConsole";
 import logo from "./octank-logo.png";
 
+const Header = styled("div")`
+  background-color: #31465f;
+  padding-left: 16px;
+  padding-right: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  right: 0;
+  left: 0;
+  height: 80px;
+  z-index: 2;
+`;
 const Image = styled.img`
   height: 100px;
   width: 100px
