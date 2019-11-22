@@ -4,6 +4,7 @@ import { Authenticator } from "aws-amplify-react";
 import styled from "@emotion/styled";
 import awsExports from "./aws-exports";
 import Alerts from "./components/OpsConsole";
+import logo from "./octank-logo.png";
 
 const Image = styled.img`
   height: 100px;
@@ -67,7 +68,7 @@ function App() {
     <Alerts />
   ) : (
     <>
-      <Image src="./octank-logo.png" />
+      <Image src={logo} />
       <Title>Hotel Operator Console </Title>
       <Authenticator
         onStateChange={authState => {
