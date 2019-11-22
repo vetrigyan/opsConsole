@@ -51,7 +51,7 @@ const StyledTabList = styled(TabList)`
   justify-content: stretch;
   align-items: center;
   position: fixed;
-  top: 80px;
+  top: 100px;
   left: 0;
   right: 0;
   height; 40px;
