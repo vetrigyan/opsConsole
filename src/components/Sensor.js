@@ -126,8 +126,8 @@ const SensorRoomDataDetailFieldValue = styled("span")`
 `;
 
 const SensorRoomDataDetailFieldValueHighlight = styled("span")`
-  foregroundColor: #ffac31;
-  backgroundColor: #b51609;
+  color: #ffac31;
+  background: #b51609;
   margin: 0;
   display: flex;
   flex-direction: column;
