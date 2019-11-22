@@ -6,6 +6,13 @@ import { Tabs, TabList, Tab, TabPanels, TabPanel } from "@reach/tabs";
 
 import Alerts from "./Alerts";
 import SensorStatus from "./Sensors";
+import logo from "./octank-logo.png";
+
+const Image = styled.img`
+  height: 100px;
+  width: 100px
+  padding: 16px;
+`;
 
 const Header = styled("div")`
   background-color: #31465f;
@@ -82,6 +89,7 @@ export default () => {
   return (
     <>
       <Header>
+        <Image src={logo} />
         <Title>OcTank                Hotel Operator Console</Title>
         <SignOutButton
           onClick={() => {

@@ -9,6 +9,7 @@ import logo from "./octank-logo.png";
 const Image = styled.img`
   height: 100px;
   width: 100px
+  padding: 16px;
 `;
 
 const Title = styled("h1")`
@@ -68,8 +69,10 @@ function App() {
     <Alerts />
   ) : (
     <>
-      <Image src={logo} />
-      <Title>Hotel Operator Console </Title>
+      <Header>
+        <Image src={logo} />
+        <Title>Hotel Operator Console </Title>
+      </Header>
       <Authenticator
         onStateChange={authState => {
           if (authState === "signedIn") {
