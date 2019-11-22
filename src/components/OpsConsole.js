@@ -6,7 +6,7 @@ import { Tabs, TabList, Tab, TabPanels, TabPanel } from "@reach/tabs";
 
 import Alerts from "./Alerts";
 import SensorStatus from "./Sensors";
-import logo from "./octank-logo.png";
+import logo from "../octank-logo.png";
 
 const Image = styled.img`
   height: 100px;
