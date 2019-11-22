@@ -109,7 +109,7 @@ const SensorRoomDataDetailWrapper = styled("div")`
 `;
 
 const SensorRoomDataDetailFieldName = styled("span")`
-  color: #24bee4;
+  color: #ffac31;
   margin: 0;
   display: flex;
   flex-direction: column;
@@ -117,7 +117,7 @@ const SensorRoomDataDetailFieldName = styled("span")`
   align-items: center;
 `;
 const SensorRoomDataDetailFieldValue = styled("span")`
-  color: #ffac31;
+  color: #ffffff;
   margin: 0;
   display: flex;
   flex-direction: column;
