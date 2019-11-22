@@ -38,7 +38,9 @@ export default () => {
           setListings(prevValue => {
           console.log("Invoked onUpdateSensorRoomData Subscription callback " + e.value.data.onUpdateSensorRoomData.id);  
                 const updatedListings = prevValue.map(l => {
+                  console.log("In onUpdateSensorRoomData processing, list item sensorId = " + l.sensorId);
                   console.log("In onUpdateSensorRoomData processing, received sensorId = " + e.value.data.onUpdateSensorRoomData.sensorId);
+                  console.log("In onUpdateSensorRoomData processing, list item id = " + l.id);
                   console.log("In onUpdateSensorRoomData processing, received id = " + e.value.data.onUpdateSensorRoomData.id);
                   if (l.id == e.value.data.onUpdateSensorRoomData.id) {
                   console.log("In onUpdateSensorRoomData processing, matched");
