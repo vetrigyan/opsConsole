@@ -3,7 +3,7 @@ import { Auth } from "aws-amplify";
 import { Authenticator } from "aws-amplify-react";
 import styled from "@emotion/styled";
 import awsExports from "./aws-exports";
-import Alerts from "./components/OpsConsole";
+import SensorStatus from "./components/OpsConsole";
 import logo from "./octank-logo.png";
 
 const Header = styled("div")`
@@ -16,19 +16,24 @@ const Header = styled("div")`
   position: fixed;
   right: 0;
   left: 0;
-  height: 80px;
+  height: 100px;
   z-index: 2;
 `;
 const Image = styled.img`
   height: 100px;
-  width: 100px
+  width: 100px;
   padding: 16px;
+  margin-top: 8px;
+  margin-bottom: 8px;
 `;
 
 const Title = styled("h1")`
   text-align: center;
   color: #ffffff;
-  margin-bottom: 8px;
+  margin-bottom: 5px;
+`;
+const AuthenticatorWrapper = styled("div")`
+  padding-top: 100px
 `;
 
 const theme = {
@@ -79,13 +84,14 @@ function App() {
   }, []);
 
   return state.isLoggedIn ? (
-    <Alerts />
+    <SensorStatus />
   ) : (
     <>
       <Header>
         <Image src={logo} />
         <Title>Hotel Operator Console </Title>
       </Header>
+      <AuthenticatorWrapper>
       <Authenticator
         onStateChange={authState => {
           if (authState === "signedIn") {
@@ -95,6 +101,7 @@ function App() {
         amplifyConfig={awsExports}
         theme={theme}
       />
+      </AuthenticatorWrapper>
     </>
   );
 }

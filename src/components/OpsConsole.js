@@ -12,6 +12,8 @@ const Image = styled.img`
   height: 100px;
   width: 100px;
   padding: 16px;
+  margin-top: 8px;
+  margin-bottom: 8px;
 `;
 
 const Header = styled("div")`
@@ -24,7 +26,7 @@ const Header = styled("div")`
   position: fixed;
   right: 0;
   left: 0;
-  height: 80px;
+  height: 100px;
   z-index: 2;
 `;
 
@@ -41,7 +43,7 @@ const SignOutButton = styled(Button)`
 `;
 
 const StyledTabs = styled(Tabs)`
-  padding-top: 80px;
+  padding-top: 100px;
 `;
 
 const StyledTabList = styled(TabList)`
@@ -90,7 +92,7 @@ export default () => {
     <>
       <Header>
         <Image src={logo} />
-        <Title>OcTank                Hotel Operator Console</Title>
+        <Title>Hotel Operator Console</Title>
         <SignOutButton
           onClick={() => {
             Auth.signOut().then(() => window.location.reload());
