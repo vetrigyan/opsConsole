@@ -10,7 +10,7 @@ import logo from "../octank-logo.png";
 
 const Image = styled.img`
   height: 100px;
-  width: 100px
+  width: 100px;
   padding: 16px;
 `;
 
