@@ -42,8 +42,9 @@ export default () => {
                   console.log("In onUpdateSensorRoomData processing, received sensorId = " + e.value.data.onUpdateSensorRoomData.sensorId);
                   console.log("In onUpdateSensorRoomData processing, list item id = " + l.id);
                   console.log("In onUpdateSensorRoomData processing, received id = " + e.value.data.onUpdateSensorRoomData.id);
-                  if (l.id == e.value.data.onUpdateSensorRoomData.id) {
-                  console.log("In onUpdateSensorRoomData processing, matched");
+                  if (l.sensorId == e.value.data.onUpdateSensorRoomData.id ||
+                      l.id == e.value.data.onUpdateSensorRoomData.id) {
+                    console.log("In onUpdateSensorRoomData processing, matched");
                     return e.value.data.onUpdateSensorRoomData;
                   } else {
                     console.log("In onUpdateSensorRoomData processing, Not matched");
