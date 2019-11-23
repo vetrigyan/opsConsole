@@ -180,7 +180,7 @@ export default props => {
                 <SensorRoomDataDetailFieldName>
                   {"Current Flow Rate: "}
                 </SensorRoomDataDetailFieldName>
-                {props.sensor.flowRate != 100 ? 
+                {props.sensor.flowRate != 100 || props.sensor.occupied == true   ? 
                   (
                     <SensorRoomDataDetailFieldValue>
                       {props.sensor.flowRate + " mL/min"}
